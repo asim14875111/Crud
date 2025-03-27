@@ -58,8 +58,7 @@
             <label class="font-semibold text-gray-600" >Active/inactive:</label>
             <br>
 
-            <select class="w-40 h-8 rounded text-gray-500 mt-2 " id="status" name="
-" id="">
+            <select class="w-40 h-8 rounded text-gray-500 mt-2 " id="status"  >
 <option value="active">Active</option>
 <option value="inactive">Inactive</option>
 
@@ -113,32 +112,8 @@
 
       <script>
 
-function remove(){
 
-   let element = document.getElementById("removed")
-
-element.remove()
-
-}
-
-
-
-
-
-function remove(){
-    const element = document.getElementById("removed")
-    element.remove()
-}
-
-
-function getOption(){
-    selectElement = document.getElementById('status')
-    output = selectElement.options[selectElement.selectedIndex].value
-}
-
-    
-         
-             let NAME=[];
+    let NAME=[];
          
          
              function addEntry(){
@@ -156,9 +131,8 @@ function getOption(){
                
          
                  NAME.push(name)
-                 displayEntries() 
-}
-             
+                 displayEntries() }
+              
 
 const loginForm = document.getElementById('loginForm')
          loginForm.addEventListener("submit",(e) =>{
@@ -166,6 +140,9 @@ const loginForm = document.getElementById('loginForm')
              e.preventDefault()
              })
          
+// Displaying emoloyees record in table
+
+
          function displayEntries() {
              const tbody = document.getElementById("employees-lists");
              tbody.innerHTML = '';
@@ -190,6 +167,7 @@ const loginForm = document.getElementById('loginForm')
                }
 
 
+               // function to delete employee record
 
 
                function deleteItem(index) {
@@ -198,7 +176,7 @@ const loginForm = document.getElementById('loginForm')
 
 
 
-
+// Function to edit employee record
 
 function editItem(index){
    const entry = NAME [index];
