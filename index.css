@@ -78,3 +78,10 @@ thead tr td{
     font-weight: 500;
     color: white;
 }
+
+tbody tr td{
+    padding-left: 15px;
+    font-size :17px;
+font-weight: 700;
+color: rgba(43, 42, 42, 0.911);
+}

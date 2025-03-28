@@ -15,18 +15,21 @@ function addEntry() {
     employeestatus,
   };
 
-
   const updatebutton = document.getElementById("updatebutton");
-
+ 
 
   if (currentEditIndex !== null) {
     NAME[currentEditIndex] = entry;
-    currentEditIndex = null;
-    // updatebutton.innerHTML = "Add"
-  } else {
+    currentEditIndex = null
+} 
+
+
+
+else{
     NAME.push(entry);
-    updatebutton.innerHTML = "Update/add";
-  }
+    updatebutton.innerHTML = "Update/add" 
+}
+
   document.getElementById("loginForm").reset();
   displayEntries();
 }
@@ -39,13 +42,13 @@ function displayEntries() {
   NAME.forEach((entry, index) => {
     const row = document.createElement("tr");
     row.innerHTML = `
-               <td class="row2 pl-4 text-lg font-bold text-gray-600">${entry.employeename}</td>
-               <td class="row2 text-lg font-bold text-gray-600">${entry.joiningdate}</td>
-               <td class="row2 text-lg font-bold text-gray-600">${entry.employeesalary}</td>
-               <td class="row2 text-lg font-bold text-gray-600">${entry.employeestatus}</td>
-               <td class="cursor-pointer text-lg text-blue-500" onclick="deleteItem(${index})">Delete</td>
-               <td class="cursor-pointer text-blue-500 " onclick="editItem(${index})">Edit</td>`;
-    tbody.appendChild(row);
+               <td class="row2">${entry.employeename}</td>
+               <td class="row2">${entry.joiningdate}</td>
+               <td class="row2">${entry.employeesalary}</td>
+               <td class="row2">${entry.employeestatus}</td>
+               <td class="cursor-pointer text-lg text-blue-700" onclick="deleteItem(${index})">Delete</td>
+               <td id="editbutton" class="cursor-pointer text-blue-700 " onclick="editItem(${index})">Edit</td>`;
+               tbody.appendChild(row);
   });
 }
 
