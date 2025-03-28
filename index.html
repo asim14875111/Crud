@@ -3,41 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline:opsz,wght@10..72,100..900&family=Big+Shoulders+Stencil:opsz,wght@10..72,100..900&family=Big+Shoulders:opsz,wght@10..72,100..900&family=DM+Serif+Text:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif+Todhri&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+    <title>CRUD</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      body {
-        background-color: rgba(66, 80, 82, 0.253);
-      }
-      label {
-        font-family: "Big Sholuder", sans-serif;
-      }
-      .list {
-        justify-self: center;
-        border: 2px solid black;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        padding: 10px;
-      }
-      input {
-        border: none;
-        border-radius: 4px;
-      }
-      .d-none {
-        display: none;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
+
+    <div class="container">
     <h1 class="text-4xl font-bold justify-self-center pt-4">Crud operations</h1>
-    <div class="flex justify-self-center items-center employee-form pb-8 pt-10">
+    <div class=" inputs-div">
       <form
         class="form-control flex gap-4"
         id="loginForm"
@@ -45,12 +19,10 @@
         autocomplete="off"
       >
         <div>
-          <label class="pl-2 font-semibold text-gray-600" for=""
-            >Employee Name:</label
-          >
-          <br />
+          <label>Employee Name:</label>
+          <br/>
           <input
-            class="form-control border pl-2 mt-2 pt-1 pb-0.5 border-black"
+            class="border pl-2 mt-2 pt-1 pb-0.5"
             type="text"
             name="employee-name"
             id="employee-name"
@@ -58,7 +30,7 @@
           />
         </div>
         <div>
-          <label class="font-semibold text-gray-600">Date of Joining:</label>
+          <label>Date of Joining:</label>
           <br />
           <input
             class="mt-2 px-2 border border-black py-0.5"
@@ -68,7 +40,7 @@
           />
         </div>
         <div>
-          <label class="font-semibold text-gray-600">Salary:</label>
+          <label>Salary:</label>
           <br />
           <input
             class="mt-2 border border-black pl-2 py-1"
@@ -78,39 +50,35 @@
             placeholder="Enter salary"
           />
         </div>
-        <div>
-          <label class="font-semibold text-gray-600">Active/inactive:</label>
+        <div  >
+          <label>Active/inactive:</label>
           <br />
-          <select class="w-40 h-8 rounded text-gray-500 mt-2" id="status">
+          <select id="status">
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
           </select>
         </div>
       </form>
     </div>
-    <button
-      onclick="addEntry()"
-      class="bg-green-600 flex text-white px-4 py-1 border border-black border-none justify-self-center hover:bg-green-700 rounded font-medium items-center gap-2 ml-4"
-      id="updatebutton"
-    >
-      Add
-    </button>
-    <p class="flex bw-fit justify-self-center mt-8" id="demo"></p>
+
+<!-- Button to add employees entries -->
+
+    <button onclick="addEntry()" id="updatebutton">Add</button>
+
     <div>
-      <table
-        class="border-2 bg-gray-400 border-black justify-self-center w-9/12 h-12"
-      >
+      <table>
         <thead>
           <tr>
-            <td class="text-lg pl-4 pt-2 font-semibold text-white">
-              Employee Name
-            </td>
-            <td class="text-lg pt-2 font-semibold text-white">Joining Date</td>
-            <td class="text-lg pt-2 font-semibold text-white">Salary</td>
-            <td class="text-lg pt-2 font-semibold text-white">Status</td>
-            <th class="text-lg pt-2 font-semibold text-white">Action</th>
+            <td class="pl-4">Employee Name</td>
+            <td>Joining Date</td>
+            <td>Salary</td>
+            <td>Status</td>
+            <td>Action</td>
           </tr>
         </thead>
+
+<!-- Getting employees record in table body -->
+
         <tbody id="employees-lists">
           <tr id="row1">
             <td id="first-employee-id"></td>
@@ -121,76 +89,7 @@
         </tbody>
       </table>
     </div>
-    <script>
-      let NAME = [];
-      let currentEditIndex = null;
-
-      function addEntry() {
-        const employeename = document.getElementById("employee-name").value;
-        const joiningdate = document.getElementById("joining-date").value;
-        const employeesalary = document.getElementById("employee-salary").value;
-        const employeestatus = document.getElementById("status").value;
-
-        const entry = {
-          employeename,
-          joiningdate,
-          employeesalary,
-          employeestatus,
-        };
-
-        const updatebutton = document.getElementById("updatebutton");
-
-        if (currentEditIndex !== null) {
-          NAME[currentEditIndex] = entry;
-          currentEditIndex = null;
-          // updatebutton.innerHTML = "Add"
-        } else {
-          NAME.push(entry);
-          updatebutton.innerHTML = "Update/add";
-        }
-        document.getElementById("loginForm").reset();
-        displayEntries();
-      }
-
-      // Displaying employees record in table
-      function displayEntries() {
-        const tbody = document.getElementById("employees-lists");
-        tbody.innerHTML = "";
-
-        NAME.forEach((entry, index) => {
-          const row = document.createElement("tr");
-          row.innerHTML = `
-                     <td class="row2 pl-4 text-lg font-bold text-gray-600">${entry.employeename}</td>
-                     <td class="row2 text-lg font-bold text-gray-600">${entry.joiningdate}</td>
-                     <td class="row2 text-lg font-bold text-gray-600">${entry.employeesalary}</td>
-                     <td class="row2 text-lg font-bold text-gray-600">${entry.employeestatus}</td>
-                     <td class="cursor-pointer text-lg text-blue-500" onclick="deleteItem(${index})">Delete</td>
-                     <td class="cursor-pointer" onclick="editItem(${index})">Edit</td>`;
-          tbody.appendChild(row);
-        });
-      }
-
-      // Function to delete employee record
-      function deleteItem(index) {
-        NAME.splice(index, 1);
-        displayEntries();
-      }
-
-      // Function to edit employee record
-      function editItem(index) {
-        const entry = NAME[index];
-        document.getElementById("employee-name").value = entry.employeename;
-        document.getElementById("joining-date").value = entry.joiningdate;
-        document.getElementById("employee-salary").value = entry.employeesalary;
-        document.getElementById("status").value = entry.employeestatus;
-        currentEditIndex = index;
-      }
-
-      const loginForm = document.getElementById("loginForm");
-      loginForm.addEventListener("submit", (ev) => {
-        ev.preventDefault();
-        loginForm.reset();
-      });
-    </script>
+</div>
+    <script src="index.js"></script>
   </body>
 </html>
