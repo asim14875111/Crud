@@ -13,15 +13,14 @@ function addEntry() {
     joiningdate,
     employeesalary,
     employeestatus,
-  };
+};
 
   const updatebutton = document.getElementById("updatebutton");
  
 
   if (currentEditIndex !== null) {
     NAME[currentEditIndex] = entry;
-    currentEditIndex = null
-} 
+    currentEditIndex = null} 
 
 
 
@@ -35,7 +34,9 @@ else{
 }
 
 // Displaying employees record in table
+
 function displayEntries() {
+
   const tbody = document.getElementById("employees-lists");
   tbody.innerHTML = "";
 
@@ -53,6 +54,7 @@ function displayEntries() {
 }
 
 // Function to delete employee record
+
 function deleteItem(index) {
   NAME.splice(index, 1);
   displayEntries();
@@ -65,8 +67,7 @@ function editItem(index) {
   document.getElementById("joining-date").value = entry.joiningdate;
   document.getElementById("employee-salary").value = entry.employeesalary;
   document.getElementById("status").value = entry.employeestatus;
-  currentEditIndex = index;
-}
+  currentEditIndex = index;}
 
 // Formatting inputs values on submit
 
@@ -75,3 +76,12 @@ loginForm.addEventListener("submit", (ev) => {
   ev.preventDefault();
   loginForm.reset();
 });
+
+
+
+
+function noNumbers(event){
+  if(event.key >= '0' && event.key <= '9'){
+    event.preventDefault()
+  }
+}
