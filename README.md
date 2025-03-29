@@ -49,7 +49,7 @@ You can run the HTML file in two ways:
 
 
 
-## 2 Interacting with Application
+## 2. Interacting with Application
 
 1. **Adding Data**:
    - Enter data in the inputs fields.
