@@ -28,7 +28,7 @@ This application allows user to:
 You can run the HTML file in two ways:
 
 
-### A. **Opening the HTML file directily in  the browser**
+### A. **Opening the HTML file directly in  the browser**
 
 
 1. Navigate the folder where it is located.
