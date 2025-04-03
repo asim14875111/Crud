@@ -25,7 +25,7 @@ function addEntry() {
  
   else if ( !employeename || !joiningdate || !employeesalary || !employeestatus) {
    
-      alert("Please fill in the fields")
+      alert(" fill all the fields!")
   } 
     
     
@@ -91,7 +91,7 @@ loginForm.addEventListener("submit", (ev) => {
 
 
 function noNumbers(event){
-  if(event.key >= '1'  && event.key <= '9' ){
+  if(event.key >= '0'  && event.key <= '9' ){
     event.preventDefault()
   }
 }
@@ -185,6 +185,22 @@ else if(event.key === '`') {
 else if(event.key === '~') {
   event.preventDefault()
 }
+else if(event.key === '+') {
+  event.preventDefault()
+}
+else if(event.key === '"') {
+  event.preventDefault()
+}
+else if(event.key === "'") {
+  event.preventDefault()
+}
+else if(event.key === "|") {
+  event.preventDefault()
+}
+// else if(event.key === "0") {
+//   event.preventDefault()
+// }
+
 }
 
 
