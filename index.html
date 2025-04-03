@@ -19,8 +19,8 @@
         id="loginForm"
         action=""
         autocomplete="off"
+        onsubmit="return addEntry(event)">
 
-        >
         <div>
           <label>Employee Name:</label>
           <br/>
@@ -32,13 +32,15 @@
             name="employee-name"
             id="employee-name"
             placeholder="Enter name"
-            onkeydown="return noNumbers(event),nosymbols(event)" 
+        
             required>
         </div>
         <div>
           <label>Date of Joining:</label>
           <br />
 
+          <!-- onkeydown="return noNumbers(event),nosymbols(event)"  -->
+           
           <!-- Date of joining input -->
 
           <input
@@ -71,7 +73,9 @@
             <option value="inactive">Inactive</option>
           </select>
         </div>
-        <button type="submit" onclick="addEntry()" id="updatebutton">Add</button>
+
+
+        <button type="submit"   id="updatebutton">Add</button>
       </form>
     </div>
 

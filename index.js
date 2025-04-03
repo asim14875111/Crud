@@ -8,6 +8,7 @@ function addEntry() {
   const employeesalary = document.getElementById("employee-salary").value;
   const employeestatus = document.getElementById("status").value;
 
+
   const entry = {
     employeename,
     joiningdate,
@@ -26,17 +27,19 @@ function addEntry() {
  
 
     else{
-    NAME.push(entry);
-
+      
+      NAME.push(entry);
       updatebutton.innerHTML = "Update/add" 
     }
-
+    
   
 
   
 
   document.getElementById("loginForm").reset();
   displayEntries();
+
+  event.preventDefault()
 }
 
 // Displaying employees record in table
@@ -88,118 +91,118 @@ loginForm.addEventListener("submit", (ev) => {
 
 //  function to stop user from adding numbers 
 
-function noNumbers(event){
-  if(event.key >= '0'  && event.key <= '9' ){
-    event.preventDefault()
-  }
-}
-
-//  function to stop user from adding symbols
-
-function nosymbols(event){
-
-  if(event.key === '@')
-    
-    {event.preventDefault()}
-
-else if(event.key === '!') {
-  event.preventDefault()
-}
-else if(event.key === '#') {
-  event.preventDefault()
-}
-else if(event.key === '$') {
-  event.preventDefault()
-}
-else if(event.key === '%') {
-  event.preventDefault()
-}
-else if(event.key === '^') {
-  event.preventDefault()
-}
-else if(event.key === '&') {
-  event.preventDefault()
-}
-else if(event.key === '*') {
-  event.preventDefault()
-}
-else if(event.key === '(') {
-  event.preventDefault()
-}
-else if(event.key === ')' ) {
-  event.preventDefault()
-}
-else if(event.key === '_') {
-  event.preventDefault()
-}
-else if(event.key === '-') {
-  event.preventDefault()
-}
-else if(event.key === '=') {
-  event.preventDefault()
-}
-else if(event.key === '[') {
-  event.preventDefault()
-}
-else if(event.key === ']') {
-  event.preventDefault()
-}
-else if(event.key === '{') {
-  event.preventDefault()
-}
-else if(event.key === '}') {
-  event.preventDefault()
-}
-else if(event.key === '/') {
-  event.preventDefault()
-}
-else if(event.key === '?') {
-  event.preventDefault()
-}
-else if(event.key === '=') {
-  event.preventDefault()
-}
-else if(event.key === '.') {
-  event.preventDefault()
-}
-else if(event.key === '>') {
-  event.preventDefault()
-}
-else if(event.key === '<') {
-  event.preventDefault()
-}
-else if(event.key === ',') {
-  event.preventDefault()
-}
-else if(event.key === ';') {
-  event.preventDefault()
-}
-else if(event.key === ':') {
-  event.preventDefault()
-}
-else if(event.key === '`') {
-  event.preventDefault()
-}
-else if(event.key === '~') {
-  event.preventDefault()
-}
-else if(event.key === '+') {
-  event.preventDefault()
-}
-else if(event.key === '"') {
-  event.preventDefault()
-}
-else if(event.key === "'") {
-  event.preventDefault()
-}
-else if(event.key === "|") {
-  event.preventDefault()
-}
-// else if(event.key === "0") {
-//   event.preventDefault()
+// function noNumbers(event){
+//   if(event.key >= '0'  && event.key <= '9' ){
+//     event.preventDefault()
+//   }
 // }
 
-}
+// //  function to stop user from adding symbols
+
+// function nosymbols(event){
+
+//   if(event.key === '@')
+    
+//     {event.preventDefault()}
+
+// else if(event.key === '!') {
+//   event.preventDefault()
+// }
+// else if(event.key === '#') {
+//   event.preventDefault()
+// }
+// else if(event.key === '$') {
+//   event.preventDefault()
+// }
+// else if(event.key === '%') {
+//   event.preventDefault()
+// }
+// else if(event.key === '^') {
+//   event.preventDefault()
+// }
+// else if(event.key === '&') {
+//   event.preventDefault()
+// }
+// else if(event.key === '*') {
+//   event.preventDefault()
+// }
+// else if(event.key === '(') {
+//   event.preventDefault()
+// }
+// else if(event.key === ')' ) {
+//   event.preventDefault()
+// }
+// else if(event.key === '_') {
+//   event.preventDefault()
+// }
+// else if(event.key === '-') {
+//   event.preventDefault()
+// }
+// else if(event.key === '=') {
+//   event.preventDefault()
+// }
+// else if(event.key === '[') {
+//   event.preventDefault()
+// }
+// else if(event.key === ']') {
+//   event.preventDefault()
+// }
+// else if(event.key === '{') {
+//   event.preventDefault()
+// }
+// else if(event.key === '}') {
+//   event.preventDefault()
+// }
+// else if(event.key === '/') {
+//   event.preventDefault()
+// }
+// else if(event.key === '?') {
+//   event.preventDefault()
+// }
+// else if(event.key === '=') {
+//   event.preventDefault()
+// }
+// else if(event.key === '.') {
+//   event.preventDefault()
+// }
+// else if(event.key === '>') {
+//   event.preventDefault()
+// }
+// else if(event.key === '<') {
+//   event.preventDefault()
+// }
+// else if(event.key === ',') {
+//   event.preventDefault()
+// }
+// else if(event.key === ';') {
+//   event.preventDefault()
+// }
+// else if(event.key === ':') {
+//   event.preventDefault()
+// }
+// else if(event.key === '`') {
+//   event.preventDefault()
+// }
+// else if(event.key === '~') {
+//   event.preventDefault()
+// }
+// else if(event.key === '+') {
+//   event.preventDefault()
+// }
+// else if(event.key === '"') {
+//   event.preventDefault()
+// }
+// else if(event.key === "'") {
+//   event.preventDefault()
+// }
+// else if(event.key === "|") {
+//   event.preventDefault()
+// }
+// // else if(event.key === "0") {
+// //   event.preventDefault()
+// // }
+
+// }
 
 
 
