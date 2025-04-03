@@ -22,13 +22,9 @@ function addEntry() {
     currentEditIndex = null
   }
 
+  // added check to not allow user to add empty entries
  
-  else if ( !employeename || !joiningdate || !employeesalary || !employeestatus) {
-   
-      alert(" fill all the fields!")
-  } 
-    
-    
+
     else{
     NAME.push(entry);
 
@@ -90,13 +86,15 @@ loginForm.addEventListener("submit", (ev) => {
 
 
 
+//  function to stop user from adding numbers 
+
 function noNumbers(event){
   if(event.key >= '0'  && event.key <= '9' ){
     event.preventDefault()
   }
 }
 
-
+//  function to stop user from adding symbols
 
 function nosymbols(event){
 
@@ -207,3 +205,7 @@ else if(event.key === "|") {
 
 
 
+  // else if ( !employeename || !joiningdate || !employeesalary || !employeestatus) {
+   
+  //     alert(" fill all the fields!")
+  // } 

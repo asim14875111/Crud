@@ -19,45 +19,53 @@
         id="loginForm"
         action=""
         autocomplete="off"
-      >
+
+        >
         <div>
           <label>Employee Name:</label>
           <br/>
+
+          <!-- name input -->
           <input
             class="border pl-2 mt-2 pt-1 pb-0.5"
             type="text"
             name="employee-name"
             id="employee-name"
-            pattern="[^0-9]*"
             placeholder="Enter name"
             onkeydown="return noNumbers(event),nosymbols(event)"
-          />
+            required>
         </div>
         <div>
           <label>Date of Joining:</label>
           <br />
+
+          <!-- Date of joining input -->
+
           <input
             class="mt-2 px-2 border border-black py-0.5"
             type="date"
             name="joining-date"
             id="joining-date"
-          />
+            required>
         </div>
         <div>
           <label>Salary:</label>
           <br />
+
+          <!-- Salary input -->
           <input
             class="mt-2 border border-black pl-2 py-1"
             type="number"
             name="salary-of-employee"
             id="employee-salary"
             placeholder="Enter salary"
-          />
+            required>
         </div>
         <div  >
           <label>Active/inactive:</label>
           <br />
-          <select class="pl-2 pb-1 text-gray-500 pt-1 mt-2 " id="status">
+
+          <select class="pl-2 pb-1 text-gray-500 pt-1 mt-2 " id="status" required>
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
           </select>
