@@ -23,8 +23,7 @@ function addEntry() {
     currentEditIndex = null
   }
 
-  // added check to not allow user to add empty entries
- 
+// displaying entries and changing inner html of button when the entries are added
 
     else{
       
@@ -39,7 +38,7 @@ function addEntry() {
   document.getElementById("loginForm").reset();
   displayEntries();
 
-  event.preventDefault()
+  preventDefault()
 }
 
 // Displaying employees record in table
@@ -88,127 +87,3 @@ loginForm.addEventListener("submit", (ev) => {
 
 
 
-
-//  function to stop user from adding numbers 
-
-// function noNumbers(event){
-//   if(event.key >= '0'  && event.key <= '9' ){
-//     event.preventDefault()
-//   }
-// }
-
-// //  function to stop user from adding symbols
-
-// function nosymbols(event){
-
-//   if(event.key === '@')
-    
-//     {event.preventDefault()}
-
-// else if(event.key === '!') {
-//   event.preventDefault()
-// }
-// else if(event.key === '#') {
-//   event.preventDefault()
-// }
-// else if(event.key === '$') {
-//   event.preventDefault()
-// }
-// else if(event.key === '%') {
-//   event.preventDefault()
-// }
-// else if(event.key === '^') {
-//   event.preventDefault()
-// }
-// else if(event.key === '&') {
-//   event.preventDefault()
-// }
-// else if(event.key === '*') {
-//   event.preventDefault()
-// }
-// else if(event.key === '(') {
-//   event.preventDefault()
-// }
-// else if(event.key === ')' ) {
-//   event.preventDefault()
-// }
-// else if(event.key === '_') {
-//   event.preventDefault()
-// }
-// else if(event.key === '-') {
-//   event.preventDefault()
-// }
-// else if(event.key === '=') {
-//   event.preventDefault()
-// }
-// else if(event.key === '[') {
-//   event.preventDefault()
-// }
-// else if(event.key === ']') {
-//   event.preventDefault()
-// }
-// else if(event.key === '{') {
-//   event.preventDefault()
-// }
-// else if(event.key === '}') {
-//   event.preventDefault()
-// }
-// else if(event.key === '/') {
-//   event.preventDefault()
-// }
-// else if(event.key === '?') {
-//   event.preventDefault()
-// }
-// else if(event.key === '=') {
-//   event.preventDefault()
-// }
-// else if(event.key === '.') {
-//   event.preventDefault()
-// }
-// else if(event.key === '>') {
-//   event.preventDefault()
-// }
-// else if(event.key === '<') {
-//   event.preventDefault()
-// }
-// else if(event.key === ',') {
-//   event.preventDefault()
-// }
-// else if(event.key === ';') {
-//   event.preventDefault()
-// }
-// else if(event.key === ':') {
-//   event.preventDefault()
-// }
-// else if(event.key === '`') {
-//   event.preventDefault()
-// }
-// else if(event.key === '~') {
-//   event.preventDefault()
-// }
-// else if(event.key === '+') {
-//   event.preventDefault()
-// }
-// else if(event.key === '"') {
-//   event.preventDefault()
-// }
-// else if(event.key === "'") {
-//   event.preventDefault()
-// }
-// else if(event.key === "|") {
-//   event.preventDefault()
-// }
-// // else if(event.key === "0") {
-// //   event.preventDefault()
-// // }
-
-// }
-
-
-
-
-
-  // else if ( !employeename || !joiningdate || !employeesalary || !employeestatus) {
-   
-  //     alert(" fill all the fields!")
-  // } 

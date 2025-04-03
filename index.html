@@ -14,14 +14,15 @@
     <div class=" inputs-div">
       <form
       name="myform"
-      onsubmit=""
         class="form-control flex gap-4"
         id="loginForm"
         action=""
         autocomplete="off"
         onsubmit="return addEntry(event)">
 
-        <div>
+        <div class="flex gap-4">
+
+        <div class="" >
           <label>Employee Name:</label>
           <br/>
 
@@ -32,7 +33,7 @@
             name="employee-name"
             id="employee-name"
             placeholder="Enter name"
-        
+        pattern="[A-Za-z]*"
             required>
         </div>
         <div>
@@ -40,7 +41,7 @@
           <br />
 
           <!-- onkeydown="return noNumbers(event),nosymbols(event)"  -->
-           
+
           <!-- Date of joining input -->
 
           <input
@@ -73,11 +74,16 @@
             <option value="inactive">Inactive</option>
           </select>
         </div>
-
-
-        <button type="submit"   id="updatebutton">Add</button>
-      </form>
+      </div>
     </div>
+
+
+
+<div class="mt-1" >   
+    <button type="submit"   id="updatebutton">Add</button>
+</div>
+
+</form>
 
 <!-- Button to add employees entries -->
 
