@@ -16,18 +16,28 @@ function addEntry() {
 };
 
   const updatebutton = document.getElementById("updatebutton");
- 
-
-  if (currentEditIndex !== null) {
+  
+   if( currentEditIndex !== null){
     NAME[currentEditIndex] = entry;
-    currentEditIndex = null} 
+    currentEditIndex = null
+  }
 
-
-
-else{
+ 
+  else if ( !employeename || !joiningdate || !employeesalary || !employeestatus) {
+   
+      alert("Please fill in the fields")
+  } 
+    
+    
+    else{
     NAME.push(entry);
-    updatebutton.innerHTML = "Update/add" 
-}
+
+      updatebutton.innerHTML = "Update/add" 
+    }
+
+  
+
+  
 
   document.getElementById("loginForm").reset();
   displayEntries();
@@ -176,3 +186,8 @@ else if(event.key === '~') {
   event.preventDefault()
 }
 }
+
+
+
+
+
