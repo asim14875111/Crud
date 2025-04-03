@@ -32,7 +32,7 @@
             name="employee-name"
             id="employee-name"
             placeholder="Enter name"
-            onkeydown="return noNumbers(event),nosymbols(event)"
+            onkeydown="return noNumbers(event),nosymbols(event)" 
             required>
         </div>
         <div>
@@ -45,7 +45,7 @@
             class="mt-2 px-2 border border-black py-0.5"
             type="date"
             name="joining-date"
-            id="joining-date"
+            id="joining-date" 
             required>
         </div>
         <div>
@@ -58,24 +58,26 @@
             type="number"
             name="salary-of-employee"
             id="employee-salary"
-            placeholder="Enter salary"
+            placeholder="Enter salary" 
             required>
         </div>
         <div  >
           <label>Active/inactive:</label>
           <br />
 
-          <select class="pl-2 pb-1 text-gray-500 pt-1 mt-2 " id="status" required>
+          <select class="pl-2 pb-1 text-gray-500 pt-1 mt-2 " id="status"
+           required>
             <option value="active">Active</option>
             <option value="inactive">Inactive</option>
           </select>
         </div>
+        <button type="submit" onclick="addEntry()" id="updatebutton">Add</button>
       </form>
     </div>
 
 <!-- Button to add employees entries -->
 
-    <button onclick="addEntry()" id="updatebutton">Add</button>
+ 
 
     <div>
       <table class="border-2 border-black" >
