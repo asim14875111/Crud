@@ -81,7 +81,98 @@ loginForm.addEventListener("submit", (ev) => {
 
 
 function noNumbers(event){
-  if(event.key >= '0' && event.key <= '9'){
+  if(event.key >= '1'  && event.key <= '9' ){
     event.preventDefault()
   }
+}
+
+
+
+function nosymbols(event){
+
+  if(event.key === '@')
+    
+    {event.preventDefault()}
+
+else if(event.key === '!') {
+  event.preventDefault()
+}
+else if(event.key === '#') {
+  event.preventDefault()
+}
+else if(event.key === '$') {
+  event.preventDefault()
+}
+else if(event.key === '%') {
+  event.preventDefault()
+}
+else if(event.key === '^') {
+  event.preventDefault()
+}
+else if(event.key === '&') {
+  event.preventDefault()
+}
+else if(event.key === '*') {
+  event.preventDefault()
+}
+else if(event.key === '(') {
+  event.preventDefault()
+}
+else if(event.key === ')' ) {
+  event.preventDefault()
+}
+else if(event.key === '_') {
+  event.preventDefault()
+}
+else if(event.key === '-') {
+  event.preventDefault()
+}
+else if(event.key === '=') {
+  event.preventDefault()
+}
+else if(event.key === '[') {
+  event.preventDefault()
+}
+else if(event.key === ']') {
+  event.preventDefault()
+}
+else if(event.key === '{') {
+  event.preventDefault()
+}
+else if(event.key === '}') {
+  event.preventDefault()
+}
+else if(event.key === '/') {
+  event.preventDefault()
+}
+else if(event.key === '?') {
+  event.preventDefault()
+}
+else if(event.key === '=') {
+  event.preventDefault()
+}
+else if(event.key === '.') {
+  event.preventDefault()
+}
+else if(event.key === '>') {
+  event.preventDefault()
+}
+else if(event.key === '<') {
+  event.preventDefault()
+}
+else if(event.key === ',') {
+  event.preventDefault()
+}
+else if(event.key === ';') {
+  event.preventDefault()
+}
+else if(event.key === ':') {
+  event.preventDefault()
+}
+else if(event.key === '`') {
+  event.preventDefault()
+}
+else if(event.key === '~') {
+  event.preventDefault()
+}
 }
