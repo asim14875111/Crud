@@ -3,15 +3,17 @@ let NAME = [];
 // Added a variable to check entry in name is being editing or not 
 
 let currentEditIndex = null;
-// Function to add entries 
 
+// Function to add entries 
 function addEntry() {
+
+  // Getting values 
   const employeename = document.getElementById("employee-name").value;
   const joiningdate = document.getElementById("joining-date").value;
   const employeesalary = document.getElementById("employee-salary").value;
   const employeestatus = document.getElementById("status").value;
 
-
+// Storing all the values in object
   const entry = {
     employeename,
     joiningdate,
@@ -32,10 +34,14 @@ function addEntry() {
     currentEditIndex = null
   }
 
-// displaying entries and changing inner html of button when the entries are added
+// displaying entries
 
+
+// If the entry is not in edit mode it will push entry in new NAME array[]
     else{
       NAME.push(entry);
+
+      // changing inner html of button when the entries are added
       updatebutton.innerHTML = "Update/add" 
     }
 
@@ -53,6 +59,8 @@ function displayEntries() {
   tbody.innerHTML = "";
 
   NAME.forEach((entry, index) => {
+
+   
     const row = document.createElement("tr");
     row.innerHTML = `
                <td class="row2">${entry.employeename}</td>
@@ -69,6 +77,7 @@ function displayEntries() {
 // Function to delete employee record
 
 function deleteItem(index) {
+  // It will remove one entry from the array 
   NAME.splice(index, 1);
   displayEntries();
 };
@@ -76,11 +85,18 @@ function deleteItem(index) {
 // Function to edit employee record
 
 function editItem(index) {
+
+
+  // Equalling value of inputs to entry to display values in input after the user clicks edit
+
   const entry = NAME[index];
   document.getElementById("employee-name").value = entry.employeename;
   document.getElementById("joining-date").value = entry.joiningdate;
   document.getElementById("employee-salary").value = entry.employeesalary;
   document.getElementById("status").value = entry.employeestatus;
+
+// It will replace the value with the older one after being edited 
+
   currentEditIndex = index;
 }
 
@@ -88,7 +104,11 @@ function editItem(index) {
 
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", (ev) => {
+
+  // Stops the form from submitting 
   ev.preventDefault();
+
+  // After submitting the form , it will clear/reset the input fields
   loginForm.reset();
 });
 
