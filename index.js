@@ -1,6 +1,6 @@
 // Created a array to store employees record
 
-let NAME = [];
+let Data = [];
 
 // Added a variable to check entry in name is being editing or not 
 
@@ -28,7 +28,7 @@ function addEntry() {
 // If the entry is editing it will edit the entry and update it
 
    if(currentEditIndex !== null){
-    NAME[currentEditIndex] = entry;
+    Data[currentEditIndex] = entry;
 
 // After updating it will reset the variable to null , the editing mode is finished
 
@@ -42,7 +42,7 @@ function addEntry() {
     else{
       // if no entry is being edited ,add the entry to new array 
 
-      NAME.push(entry);
+      Data.push(entry);
 
       // changing inner html of button when the entries are added
       updatebutton.innerHTML = "Update/add" 
@@ -66,7 +66,7 @@ function displayEntries() {
   //Removing all the existing rows in the table
   tbody.innerHTML = "";
 
-  NAME.forEach((entry, index) => {
+  Data.forEach((entry, index) => {
 
     // Creating row for each entry
     const row = document.createElement("tr");
@@ -87,7 +87,7 @@ function displayEntries() {
 
 function deleteItem(index) {
   // It will remove one entry from the array 
-  NAME.splice(index, 1);
+  Data.splice(index, 1);
 
   displayEntries();
 };
@@ -98,7 +98,7 @@ function editItem(index) {
 
 
 // Get the entry from the name array
-  const entry = NAME[index];
+  const entry = Data[index];
 
   // Set the input fields to the values which are being edited
   document.getElementById("employee-name").value = entry.employeename;
