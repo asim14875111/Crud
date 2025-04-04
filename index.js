@@ -14,11 +14,11 @@ function addEntry() {
     joiningdate,
     employeesalary,
     employeestatus,
-};
+  };
 
   const updatebutton = document.getElementById("updatebutton");
   
-   if( currentEditIndex !== null){
+   if(currentEditIndex !== null){
     NAME[currentEditIndex] = entry;
     currentEditIndex = null
   }
@@ -26,20 +26,15 @@ function addEntry() {
 // displaying entries and changing inner html of button when the entries are added
 
     else{
-      
       NAME.push(entry);
       updatebutton.innerHTML = "Update/add" 
     }
-    
-  
 
-  
 
-  document.getElementById("loginForm").reset();
-  displayEntries();
+   displayEntries();
 
-  preventDefault()
-}
+
+  };
 
 // Displaying employees record in table
 
@@ -56,7 +51,8 @@ function displayEntries() {
                <td class="row2">${entry.employeesalary}</td>
                <td class="row2">${entry.employeestatus}</td>
                <td class="cursor-pointer text-lg text-blue-700" onclick="deleteItem(${index})">Delete</td>
-               <td id="editbutton" class="cursor-pointer text-blue-700 " onclick="editItem(${index})">Edit</td>`;
+               <td id="editbutton" class="cursor-pointer text-blue-700 " onclick="editItem(${index})">Edit</td>
+               `;
                tbody.appendChild(row);
   });
 }
@@ -66,16 +62,18 @@ function displayEntries() {
 function deleteItem(index) {
   NAME.splice(index, 1);
   displayEntries();
-}
+};
 
 // Function to edit employee record
+
 function editItem(index) {
   const entry = NAME[index];
   document.getElementById("employee-name").value = entry.employeename;
   document.getElementById("joining-date").value = entry.joiningdate;
   document.getElementById("employee-salary").value = entry.employeesalary;
   document.getElementById("status").value = entry.employeestatus;
-  currentEditIndex = index;}
+  currentEditIndex = index;
+}
 
 // Formatting inputs values on submit
 
@@ -84,6 +82,4 @@ loginForm.addEventListener("submit", (ev) => {
   ev.preventDefault();
   loginForm.reset();
 });
-
-
 
