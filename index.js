@@ -4,7 +4,7 @@ let NAME = [];
 
 let currentEditIndex = null;
 
-// Function to add entries 
+// Function to add or update entries
 function addEntry() {
 
   // Getting values 
@@ -25,7 +25,6 @@ function addEntry() {
   
 // If the entry is editing it will edit the entry and update it
 
-
    if(currentEditIndex !== null){
     NAME[currentEditIndex] = entry;
 
@@ -37,8 +36,10 @@ function addEntry() {
 // displaying entries
 
 
-// If the entry is not in edit mode it will push entry in new NAME array[]
+
     else{
+      // if no entry is being edited ,add the entry to new array 
+
       NAME.push(entry);
 
       // changing inner html of button when the entries are added
@@ -55,12 +56,17 @@ function addEntry() {
 
 function displayEntries() {
 
+
+  // Getting the element where the employee records will be displayed
   const tbody = document.getElementById("employees-lists");
+
+
+  // Clear the current content in the table
   tbody.innerHTML = "";
 
   NAME.forEach((entry, index) => {
 
-   
+    // Creating row for each entry
     const row = document.createElement("tr");
     row.innerHTML = `
                <td class="row2">${entry.employeename}</td>
@@ -70,6 +76,7 @@ function displayEntries() {
                <td class="cursor-pointer text-lg text-blue-700" onclick="deleteItem(${index})">Delete</td>
                <td id="editbutton" class="cursor-pointer text-blue-700 " onclick="editItem(${index})">Edit</td>
                `;
+              //  Displaying entries in row
                tbody.appendChild(row);
   });
 }
@@ -79,6 +86,7 @@ function displayEntries() {
 function deleteItem(index) {
   // It will remove one entry from the array 
   NAME.splice(index, 1);
+
   displayEntries();
 };
 
@@ -87,9 +95,10 @@ function deleteItem(index) {
 function editItem(index) {
 
 
-  // Equalling value of inputs to entry to display values in input after the user clicks edit
-
+// Get the entry from the name array
   const entry = NAME[index];
+
+  // Set the input fields to the values which are being edited
   document.getElementById("employee-name").value = entry.employeename;
   document.getElementById("joining-date").value = entry.joiningdate;
   document.getElementById("employee-salary").value = entry.employeesalary;
@@ -105,9 +114,10 @@ function editItem(index) {
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", (ev) => {
 
-  // Stops the form from submitting 
+  // Stops the form from submitting and refreshing the page 
   ev.preventDefault();
 
+  
   // After submitting the form , it will clear/reset the input fields
   loginForm.reset();
 });
