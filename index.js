@@ -1,3 +1,5 @@
+// Created a array to store employees record
+
 let NAME = [];
 
 // Added a variable to check entry in name is being editing or not 
@@ -117,7 +119,7 @@ loginForm.addEventListener("submit", (ev) => {
   // Stops the form from submitting and refreshing the page 
   ev.preventDefault();
 
-  
+
   // After submitting the form , it will clear/reset the input fields
   loginForm.reset();
 });
