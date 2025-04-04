@@ -1,4 +1,7 @@
 let NAME = [];
+
+// Added a variable to check entry in name is being editing or not 
+
 let currentEditIndex = null;
 // Function to add entries 
 
@@ -18,8 +21,14 @@ function addEntry() {
 
   const updatebutton = document.getElementById("updatebutton");
   
+// If the entry is editing it will edit the entry and update it
+
+
    if(currentEditIndex !== null){
     NAME[currentEditIndex] = entry;
+
+// After updating it will reset the variable to null , the editing mode is finished
+
     currentEditIndex = null
   }
 
