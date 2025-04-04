@@ -63,7 +63,7 @@ function displayEntries() {
   const tbody = document.getElementById("employees-lists");
 
 
-  // Clear the current content in the table
+  //Removing all the existing rows in the table
   tbody.innerHTML = "";
 
   NAME.forEach((entry, index) => {
