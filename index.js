@@ -88,6 +88,9 @@ function displayEntries() {
 function deleteItem(index) {
   // It will remove one entry from the array 
   Data.splice(index, 1);
+  const loginForm = document.getElementById("loginForm");
+  loginForm.reset();
+
 
   displayEntries();
 };
