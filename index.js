@@ -93,6 +93,7 @@ function deleteItem(index){
   loginForm.reset();
   displayEntries();
 
+  updatebutton.innerHTML = "Add" 
 
 };
 
