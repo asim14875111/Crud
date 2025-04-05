@@ -33,19 +33,20 @@ function addEntry() {
 // After updating it will reset the variable to null , the editing mode is finished
 
     currentEditIndex = null
+    updatebutton.innerHTML = "Add" 
+
   }
-
-// displaying entries
-
-
-
-    else{
-      // if no entry is being edited ,add the entry to new array 
-
+  
+  // displaying entries
+  
+  
+  
+  else{
+    // if no entry is being edited ,add the entry to new array 
+    
+    // updatebutton.innerHTML = "Update/add" 
       Data.push(entry);
-
       // changing inner html of button when the entries are added
-      updatebutton.innerHTML = "Update/add" 
     }
 
 
@@ -85,15 +86,16 @@ function displayEntries() {
 
 // Function to delete employee record
 
-function deleteItem(index) {
+function deleteItem(index){
   // It will remove one entry from the array 
   Data.splice(index, 1);
   const loginForm = document.getElementById("loginForm");
   loginForm.reset();
-
-
   displayEntries();
+
+
 };
+
 
 // Function to edit employee record
 
@@ -112,6 +114,9 @@ function editItem(index) {
 // It will replace the value with the older one after being edited 
 
   currentEditIndex = index;
+
+    updatebutton.innerHTML = "Update" 
+  
 }
 
 // Formatting inputs values on submit
